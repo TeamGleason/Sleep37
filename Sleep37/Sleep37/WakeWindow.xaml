@@ -64,9 +64,9 @@
                 Style="{StaticResource SimpleButton}"
                 Content="←" 
                 Click="BackButton_OnClick"
-                IsEnabled="False"
                 />
 
+        <!-- content buttons -->
         <Button Grid.Row="2"
                 Grid.RowSpan="2"
                 Grid.Column="0"
@@ -74,7 +74,6 @@
                 Style="{StaticResource SimpleButton}"
                 Content="Calibrate" 
                 Click="CalibrateButton_OnClick" 
-                IsEnabled="False"
                 />
 
         <Button Grid.Row="2"
@@ -84,7 +83,6 @@
                 Style="{StaticResource SimpleButton}"
                 Content="Wake" 
                 Click="WakeButton_OnClick" 
-                IsEnabled="False"
                 />
 
         <Button Grid.Row="2"
@@ -94,7 +92,6 @@
                 Style="{StaticResource SimpleButton}"
                 Content="Call for Assistance" 
                 Click="AssistanceButton_OnClick" 
-                IsEnabled="False"
                 />
 
         <Label Grid.Row="0" Grid.Column="4" FontSize="80" Content="{Binding Source={StaticResource UpdatingTime},Path=Now}" Foreground="DarkGray" />

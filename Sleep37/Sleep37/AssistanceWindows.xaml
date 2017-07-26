@@ -64,11 +64,92 @@
                 Style="{StaticResource SimpleButton}"
                 Content="←" 
                 Click="BackButton_OnClick"
-                IsEnabled="False"
                 />
-        
-        
+
+        <Grid Grid.Row="1" 
+              Grid.RowSpan="4"
+              Grid.Column="0"
+              Grid.ColumnSpan="5">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Row="1"
+                Grid.Column="0"
+                x:Name="PainButton"
+                Style="{StaticResource SimpleButton}"
+                Content="I'm in pain" 
+                Click="PainButton_OnClick" 
+                />
+
+            <Button Grid.Row="1"
+                Grid.Column="1"
+                x:Name="RepositionButton"
+                Style="{StaticResource SimpleButton}"
+                Content="I need to reposition" 
+                Click="RepositionButton_OnClick" 
+                />
+
+            <Button Grid.Row="1"
+                Grid.Column="2"
+                x:Name="BathroomButton"
+                Style="{StaticResource SimpleButton}"
+                Content="I need to go to the bathroom" 
+                Click="BathroomButton_OnClick" 
+                />
+
+            <Button Grid.Row="1"
+                Grid.Column="3"
+                x:Name="SuctionButton"
+                Style="{StaticResource SimpleButton}"
+                Content="I need suction" 
+                Click="SuctionButton_OnClick" 
+                />
+
+            <Button Grid.Row="3"
+                Grid.Column="0"
+                x:Name="HeadacheButton"
+                Style="{StaticResource SimpleButton}"
+                Content="I have a headache" 
+                Click="HeadacheButton_OnClick" 
+                />
+
+            <Button Grid.Row="3"
+                Grid.Column="1"
+                x:Name="ItchButton"
+                Style="{StaticResource SimpleButton}"
+                Content="I have an itch" 
+                Click="ItchButton_OnClick" 
+                />
+
+            <Button Grid.Row="3"
+                Grid.Column="2"
+                x:Name="HotButton"
+                Style="{StaticResource SimpleButton}"
+                Content="I'm hot" 
+                Click="HotButton_OnClick" 
+                />
+
+            <Button Grid.Row="3"
+                Grid.Column="3"
+                x:Name="ColdButton"
+                Style="{StaticResource SimpleButton}"
+                Content="I'm cold" 
+                Click="ColdButton_OnClick" 
+                />
+        </Grid>
+
 
         <Label Grid.Row="0" Grid.Column="4" FontSize="80" Content="{Binding Source={StaticResource UpdatingTime},Path=Now}" Foreground="DarkGray" />
     </Grid>
 </Window>
+
