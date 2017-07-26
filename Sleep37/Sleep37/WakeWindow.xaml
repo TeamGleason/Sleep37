@@ -1,0 +1,102 @@
+﻿<Window x:Class="Sleep37.WakeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Sleep37"
+        mc:Ignorable="d"
+        Title="WakeWindow"
+        WindowState="Maximized"
+        Height="768"
+        Width="1024"
+        Loaded="WakeWindow_OnLoaded"
+        Closing="WakeWindow_OnClosing"
+        Background="Black"
+        Foreground="DarkGray"
+        >
+    <Window.Resources>
+        <!-- Style for the big round buttons shown in the app. -->
+        <Style x:Key="SimpleButton" TargetType="{x:Type Button}" BasedOn="{x:Null}">
+            <Setter Property="Foreground" Value="DarkGray" />
+            <Setter Property="FontSize" Value="32"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid x:Name="Grid">
+                            <Ellipse 
+                                Width="120" 
+                                Height="120" 
+                                StrokeThickness="{Binding ButtonBorderWidth}" 
+                                Fill="DarkGray"
+                                Opacity="0.25"/>
+                            <ContentPresenter
+                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                Margin="{TemplateBinding Padding}" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <local:UpdatingTime x:Key="UpdatingTime"/>
+    </Window.Resources>
+
+    <!-- The main app area. -->
+    <Grid Margin="40">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Button Grid.Row="0" 
+                Grid.Column="0"
+                x:Name="BackButton"
+                Style="{StaticResource SimpleButton}"
+                Content="←" 
+                Click="BackButton_OnClick"
+                IsEnabled="False"
+                />
+
+        <Button Grid.Row="2"
+                Grid.RowSpan="2"
+                Grid.Column="0"
+                x:Name="CalibrateButton"
+                Style="{StaticResource SimpleButton}"
+                Content="Calibrate" 
+                Click="CalibrateButton_OnClick" 
+                IsEnabled="False"
+                />
+
+        <Button Grid.Row="2"
+                Grid.RowSpan="2"
+                Grid.Column="2"
+                x:Name="WakeButton"
+                Style="{StaticResource SimpleButton}"
+                Content="Wake" 
+                Click="WakeButton_OnClick" 
+                IsEnabled="False"
+                />
+
+        <Button Grid.Row="2"
+                Grid.RowSpan="2"
+                Grid.Column="4"
+                x:Name="AssistanceButton"
+                Style="{StaticResource SimpleButton}"
+                Content="Call for Assistance" 
+                Click="AssistanceButton_OnClick" 
+                IsEnabled="False"
+                />
+
+        <Label Grid.Row="0" Grid.Column="4" FontSize="80" Content="{Binding Source={StaticResource UpdatingTime},Path=Now}" Foreground="DarkGray" />
+    </Grid>
+</Window>
