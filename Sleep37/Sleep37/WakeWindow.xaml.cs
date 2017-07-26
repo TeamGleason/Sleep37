@@ -7,7 +7,7 @@ namespace Sleep37
     /// <summary>
     /// Interaction logic for WakeWindow.xaml
     /// </summary>
-    public partial class WakeWindow : Window
+    public partial class WakeWindow
     {
         public WakeWindow()
         {

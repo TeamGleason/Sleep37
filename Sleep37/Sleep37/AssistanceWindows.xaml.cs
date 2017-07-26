@@ -8,9 +8,9 @@ namespace Sleep37
     /// <summary>
     /// Interaction logic for AssistanceWindows.xaml
     /// </summary>
-    public partial class AssistanceWindows : Window
+    public partial class AssistanceWindows
     {
-        private SpeechSynthesizer _speechSynthesizer;
+        private readonly SpeechSynthesizer _speechSynthesizer;
 
         public AssistanceWindows()
         {
