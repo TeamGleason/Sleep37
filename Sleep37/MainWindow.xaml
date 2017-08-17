@@ -15,32 +15,6 @@
     Foreground="DarkGray"
     >
 
-    <Window.Resources>
-        <!-- Style for the big round buttons shown in the app. -->
-        <Style x:Key="SimpleButton" TargetType="{x:Type Button}" BasedOn="{x:Null}">
-            <Setter Property="Foreground" Value="DarkGray" />
-            <Setter Property="FontSize" Value="32"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type Button}">
-                        <Grid x:Name="Grid">
-                            <Ellipse 
-                                Width="120" 
-                                Height="120" 
-                                StrokeThickness="{Binding ButtonBorderWidth}" 
-                                Fill="DarkGray"
-                                Opacity="0.25"/>
-                            <ContentPresenter
-                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
-                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                Margin="{TemplateBinding Padding}" />
-                        </Grid>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-        <sleep37:UpdatingTime x:Key="UpdatingTime"/>
-    </Window.Resources>
 
     <!-- The main app area. -->
     <Grid Margin="40">
@@ -65,7 +39,6 @@
                 Grid.RowSpan="2"
                 Grid.ColumnSpan="2"
                 x:Name="LockButton4"
-                Style="{StaticResource SimpleButton}"
                 Content="4" 
                 Click="LockButton4_OnClick" 
                 IsEnabled="False"
@@ -75,7 +48,6 @@
                 Grid.RowSpan="2"
                 Grid.ColumnSpan="2"
                 x:Name="LockButton1"
-                Style="{StaticResource SimpleButton}"
                 Content="1" 
                 Click="LockButton1_OnClick"
                 IsEnabled="True"
@@ -85,7 +57,6 @@
                 Grid.RowSpan="2"
                 Grid.ColumnSpan="2"
                 x:Name="LockButton2"
-                Style="{StaticResource SimpleButton}"
                 Content="2" 
                 Click="LockButton2_OnClick"
                 IsEnabled="False"
@@ -95,7 +66,6 @@
                 Grid.RowSpan="2"
                 Grid.ColumnSpan="2"
                 x:Name="LockButton3"
-                Style="{StaticResource SimpleButton}"
                 Content="3" 
                 Click="LockButton3_OnClick"
                 IsEnabled="False"

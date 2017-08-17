@@ -14,32 +14,6 @@
         Background="Black"
         Foreground="DarkGray"
         >
-    <Window.Resources>
-        <!-- Style for the big round buttons shown in the app. -->
-        <Style x:Key="SimpleButton" TargetType="{x:Type Button}" BasedOn="{x:Null}">
-            <Setter Property="Foreground" Value="DarkGray" />
-            <Setter Property="FontSize" Value="32"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type Button}">
-                        <Grid x:Name="Grid">
-                            <Ellipse 
-                                Width="120" 
-                                Height="120" 
-                                StrokeThickness="{Binding ButtonBorderWidth}" 
-                                Fill="DarkGray"
-                                Opacity="0.25"/>
-                            <ContentPresenter
-                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
-                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                Margin="{TemplateBinding Padding}" />
-                        </Grid>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-        <local:UpdatingTime x:Key="UpdatingTime"/>
-    </Window.Resources>
 
     <!-- The main app area. -->
     <Grid Margin="40">
@@ -60,8 +34,6 @@
 
         <Button Grid.Row="0" 
                 Grid.Column="0"
-                x:Name="BackButton"
-                Style="{StaticResource SimpleButton}"
                 Content="←" 
                 Click="BackButton_OnClick"
                 />
@@ -85,64 +57,48 @@
 
             <Button Grid.Row="1"
                 Grid.Column="0"
-                x:Name="PainButton"
-                Style="{StaticResource SimpleButton}"
                 Content="I'm in pain" 
                 Click="PhraseButton_OnClick" 
                 />
 
             <Button Grid.Row="1"
                 Grid.Column="1"
-                x:Name="RepositionButton"
-                Style="{StaticResource SimpleButton}"
                 Content="I need to reposition" 
                 Click="PhraseButton_OnClick" 
                 />
 
             <Button Grid.Row="1"
                 Grid.Column="2"
-                x:Name="BathroomButton"
-                Style="{StaticResource SimpleButton}"
                 Content="I need to go to the bathroom" 
                 Click="PhraseButton_OnClick" 
                 />
 
             <Button Grid.Row="1"
                 Grid.Column="3"
-                x:Name="SuctionButton"
-                Style="{StaticResource SimpleButton}"
                 Content="I need suction" 
                 Click="PhraseButton_OnClick" 
                 />
 
             <Button Grid.Row="3"
                 Grid.Column="0"
-                x:Name="HeadacheButton"
-                Style="{StaticResource SimpleButton}"
                 Content="I have a headache" 
                 Click="PhraseButton_OnClick" 
                 />
 
             <Button Grid.Row="3"
                 Grid.Column="1"
-                x:Name="ItchButton"
-                Style="{StaticResource SimpleButton}"
                 Content="I have an itch" 
                 Click="PhraseButton_OnClick" 
                 />
 
             <Button Grid.Row="3"
                 Grid.Column="2"
-                x:Name="HotButton"
-                Style="{StaticResource SimpleButton}"
                 Content="I'm hot" 
                 Click="PhraseButton_OnClick" 
                 />
 
             <Button Grid.Row="3"
                 Grid.Column="3"
-                x:Name="ColdButton"
-                Style="{StaticResource SimpleButton}"
                 Content="I'm cold" 
                 Click="PhraseButton_OnClick" 
                 />
