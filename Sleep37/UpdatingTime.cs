@@ -7,7 +7,6 @@ namespace Sleep37
     public class UpdatingTime : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        private string _now;
 
         public UpdatingTime()
         {
@@ -17,20 +16,11 @@ namespace Sleep37
             };
             timer.Tick += (sender, args) =>
             {
-                Now = DateTime.Now.ToShortTimeString();
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Now)));
             };
             timer.Start();
         }
 
-        public string Now
-        {
-            get { return _now; }
-            private set
-            {
-                _now = value;
-
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Now"));
-            }
-        }
+        public string Now => DateTime.Now.ToShortTimeString();
     }
 }
